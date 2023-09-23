@@ -72,7 +72,8 @@ def game():
 
     start_time = time.time()
     game_state = False
-    While game_state == True:
+
+    while game_state == True:
         if ButtonStats() == code:
             print(f"CODE {code} BROKEN!")
             print(time.time() - start_time)
@@ -83,9 +84,10 @@ def game():
 def main():
     game()
 
-    while True():
-        res = str(input("Press enter to restart (ctrl-C to quit) "))
-        game()
+    try:
+        while True():
+            res = str(input("Press enter to restart (ctrl-C to quit) "))
+            game()
 
     except KeyboardInterrupt:
         GPIO.cleanup
