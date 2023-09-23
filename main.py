@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-from guizero import App, Text, PushButton
 from itertools import product
 import random
 import time
