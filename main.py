@@ -33,11 +33,8 @@ def code_gen():
 
     perms_list = list(product(*(options,)*n))
     
-    print(perms_list)
-    print(len(perms_list) - 1)
-
     rand = random.randint(0, len(perms_list) - 1)
-    return list(perms_l[rand])
+    return list(perms_list[rand])
 
 
 
