@@ -67,7 +67,7 @@ def game():
     code = code_gen()
     
     for i in range(3):
-        print("Game stating in {i}...")
+        print(f"Game stating in {i}...")
         time.sleep(1)
 
     start_time = time.time()
@@ -85,7 +85,7 @@ def main():
     game()
 
     try:
-        while True():
+        while True:
             res = str(input("Press enter to restart (ctrl-C to quit) "))
             game()
 
