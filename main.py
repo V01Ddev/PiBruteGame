@@ -71,7 +71,7 @@ def game():
         time.sleep(1)
 
     start_time = time.time()
-    While game_state = True:
+    While game_state == True:
         if ButtonStats() == code:
             print(f"CODE {code} BROKEN!")
             print(time.time() - start_time)
