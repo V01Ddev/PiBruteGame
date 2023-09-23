@@ -5,8 +5,7 @@ import time
 
 
 """
-GUI:
-    * Use Guizero to make a pop up for when the code is broken
+GUI: * Use Guizero to make a pop up for when the code is broken
     * Start again button to reset
 """
 
@@ -63,7 +62,7 @@ def game():
     code = code_gen()
     print(code)
     
-    for i in range(4, 0):
+    for i in range(3, 0, -1):
         print(f"Game stating in {i}...")
         time.sleep(1)
 
@@ -72,7 +71,7 @@ def game():
 
     while game_won == False:
         if ButtonStats() == code:
-            print(f"CODE {code} BROKEN!")
+            print(f"CODE BROKEN! {code}")
             time_taken = round(time.time() - start_time, 2)
             print(time_taken)
             game_won = True
