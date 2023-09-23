@@ -56,7 +56,7 @@ def ButtonStats():
         sw.append(1)
     else:
         sw.append(0)
-    
+
     return sw
 
 
@@ -94,4 +94,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    while True:
+        print(ButtonStats())
