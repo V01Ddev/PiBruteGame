@@ -5,12 +5,9 @@ import time
 
 
 """
-Time:
-    * take time when function first starts running using time module find time after code is broken then get the delta and display it.
 GUI:
     * Use Guizero to make a pop up for when the code is broken
     * Start again button to reset
-
 """
 
 
@@ -76,7 +73,8 @@ def game():
     while game_won == False:
         if ButtonStats() == code:
             print(f"CODE {code} BROKEN!")
-            print(time.time() - start_time)
+            time_taken = round(time.time() - start_time, 2)
+            print(time_taken)
             game_won = True
 
 
