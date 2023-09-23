@@ -31,9 +31,12 @@ def code_gen():
     options = [1, 0] # the states the switch can have, high or low
     n = 3 # the number of switches in the game
 
-    perms_l = list(product(*(options,)*n))
+    perms_list = list(product(*(options,)*n))
+    
+    print(perms_list)
+    print(len(perms_list) - 1)
 
-    rand = random.randint(0, len(perms_l))
+    rand = random.randint(0, len(perms_list) - 1)
     return list(perms_l[rand])
 
 
@@ -95,4 +98,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    code_gen()
