@@ -64,19 +64,20 @@ def ButtonStats():
 def game():
 
     code = code_gen()
+    print(code)
     
-    for i in range(3):
+    for i in range(4, 0):
         print(f"Game stating in {i}...")
         time.sleep(1)
 
     start_time = time.time()
-    game_state = False
+    game_won = False
 
-    while game_state == True:
+    while game_won == False:
         if ButtonStats() == code:
             print(f"CODE {code} BROKEN!")
             print(time.time() - start_time)
-            game_state = False
+            game_won = True
 
 
 
@@ -94,5 +95,4 @@ def main():
 
 
 if __name__ == "__main__":
-    while True:
-        print(ButtonStats())
+    main()
