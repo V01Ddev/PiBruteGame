@@ -15,6 +15,9 @@ SWITCH_1 = 17
 SWITCH_2 = 27
 SWITCH_3 = 22
 
+GREEN_LED = 16
+RED_LED = 18
+
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(SWITCH_1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -22,6 +25,11 @@ GPIO.setup(SWITCH_2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(SWITCH_3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
+GPIO.setup(GREEN_LED, GPIO.OUT)
+GPIO.setup(RED_LED, GPIO.OUT)
+
+# TO SET STATUS
+# GPIO.output(GREEN_LED, GPIO.HIGH)
 
 def code_gen():
     options = [1, 0] # the states the switch can have, high or low
@@ -57,24 +65,52 @@ def ButtonStats():
 
 
 
+def flashing(pin):
+
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.3)
+    GPIO.output(pin, GPIO.LOW)
+
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.3)
+    GPIO.output(pin, GPIO.LOW)
+
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.3)
+    GPIO.output(pin, GPIO.LOW)
+
+
+
 def game():
 
     code = code_gen()
-    print(code)
-    
+    print(code) # REMOVE IN PRODUCTION
+
+    GPIO.output(RED_LED, GPIO.HIGH)
+
     for i in range(3, 0, -1):
-        print(f"Game stating in {i}...")
         time.sleep(1)
+        print(f"Game stating in {i}...")
+
+    GPIO.output(RED_LED, GPIO.LOW)
+    GPIO.output(GREEN_LED, GPIO.HIGH)
 
     start_time = time.time()
+
     game_won = False
 
     while game_won == False:
         if ButtonStats() == code:
+            game_won = True
+            
             print(f"CODE BROKEN! {code}")
             time_taken = round(time.time() - start_time, 2)
             print(time_taken)
-            game_won = True
+
+            print("Flashing LED")
+
+            flashing(GREEN_LED)
+
 
 
 
