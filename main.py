@@ -90,7 +90,7 @@ def game():
 
     for i in range(3, 0, -1):
         time.sleep(1)
-        print(f"Game stating in {i}...")
+        print(f"Game starting in {i}...")
 
     GPIO.output(RED_LED, GPIO.LOW)
     GPIO.output(GREEN_LED, GPIO.HIGH)
@@ -102,7 +102,7 @@ def game():
     while game_won == False:
         if ButtonStats() == code:
             game_won = True
-            
+
             print(f"CODE BROKEN! {code}")
             time_taken = round(time.time() - start_time, 2)
             print(time_taken)
