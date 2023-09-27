@@ -70,10 +70,12 @@ def flashing(pin):
     GPIO.output(pin, GPIO.HIGH)
     time.sleep(.3)
     GPIO.output(pin, GPIO.LOW)
+    time.sleep(.3)
 
     GPIO.output(pin, GPIO.HIGH)
     time.sleep(.3)
     GPIO.output(pin, GPIO.LOW)
+    time.sleep(.3)
 
     GPIO.output(pin, GPIO.HIGH)
     time.sleep(.3)
@@ -110,6 +112,8 @@ def game():
             print("Flashing LED")
 
             flashing(GREEN_LED)
+
+    GPIO.output(RED_LED, GPIO.HIGH)
 
 
 
