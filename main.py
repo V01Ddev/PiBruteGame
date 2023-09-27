@@ -90,6 +90,10 @@ def flashing(pin):
     time.sleep(.2)
     GPIO.output(pin, GPIO.LOW)
 
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.2)
+    GPIO.output(pin, GPIO.LOW)
+
 
 
 
