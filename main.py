@@ -73,25 +73,25 @@ def ButtonStats():
 def flashing(pin):
 
     GPIO.output(pin, GPIO.HIGH)
-    time.sleep(.2)
+    time.sleep(1)
     GPIO.output(pin, GPIO.LOW)
-    time.sleep(.2)
+    time.sleep(1)
 
     GPIO.output(pin, GPIO.HIGH)
-    time.sleep(.2)
+    time.sleep(1)
     GPIO.output(pin, GPIO.LOW)
-    time.sleep(.2)
+    time.sleep(1)
 
     GPIO.output(pin, GPIO.HIGH)
-    time.sleep(.2)
-    GPIO.output(pin, GPIO.LOW)
-
-    GPIO.output(pin, GPIO.HIGH)
-    time.sleep(.2)
+    time.sleep(1)
     GPIO.output(pin, GPIO.LOW)
 
     GPIO.output(pin, GPIO.HIGH)
-    time.sleep(.2)
+    time.sleep(1)
+    GPIO.output(pin, GPIO.LOW)
+
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(1)
     GPIO.output(pin, GPIO.LOW)
 
 
