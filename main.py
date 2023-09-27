@@ -11,12 +11,12 @@ GUI: * Use Guizero to make a pop up for when the code is broken
 
 
 
-SWITCH_1 = 17
+SWITCH_1 = 22
 SWITCH_2 = 27
-SWITCH_3 = 22
+SWITCH_3 = 17
 
-GREEN_LED = 18
-RED_LED = 16
+GREEN_LED = 24
+RED_LED = 23
 
 GPIO.setmode(GPIO.BCM)
 
