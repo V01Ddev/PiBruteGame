@@ -36,8 +36,13 @@ def code_gen():
     n = 3 # the number of switches in the game
 
     perms_list = list(product(*(options,)*n))
+
+    last_item = len(perms_list) - 1
+
+    perms_list.pop(last_item)
     
     rand = random.randint(0, len(perms_list) - 1)
+
     return list(perms_list[rand])
 
 
