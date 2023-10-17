@@ -66,7 +66,7 @@ def ButtonStats():
     else:
         sw.append(0)
 
-    time.sleep(.3)
+    time.sleep(.1)
 
     return sw
 
